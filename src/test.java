@@ -46,12 +46,12 @@ public class test{
         for (int x = 0; x < yarisPisti.length; x++) {
             yarisPisti[x] = "-";
         }
-        int b = 0;
-        int z = 0;
-        for (b=0,z=0;b<=19||z<=19;b++,z++) {
+        int b=0;
+        int z=0;
+        //for (b=0,z=0;b<=19||z<=19;b++,z++) {
 
             //do {
-            //do {
+            do {
             //for(int x=0;x< yarisPisti.length;x++){
             // if (yarisPisti[19]=="T"||yarisPisti[19]=="K"){
             //break;
@@ -64,18 +64,18 @@ public class test{
                 if (z > 18) {
                     z = 19;
                 }
-                yarisPisti[z] = "T";
+                yarisPisti[z] = "K";
             } else if (isBetween(i, 6, 7)) {
                 yarisPisti[z] = "-";
                 z -= 1;
                 if (z < 0) {
                     z = 0;
                 }
-                yarisPisti[z] = "T";
+                yarisPisti[z] = "K";
             } else if (isBetween(i, 8, 10)) {
                 yarisPisti[z] = "-";
                 z += 1;
-                yarisPisti[z] = "T";
+                yarisPisti[z] = "K";
             }
                 /*for (String s : yarisPisti) {
                     System.out.print(s);
@@ -97,35 +97,47 @@ public class test{
                 if (b > 18) {
                     b = 19;
                 }
-                yarisPisti[b] = "K";
+                yarisPisti[b] = "T";
             } else if (h == 5) {
                 yarisPisti[b] = "-";
                 b -= 12;
                 if (b < 0) {
                     b = 0;
                 }
-                yarisPisti[b] = "K";
+                yarisPisti[b] = "T";
             } else if (isBetween(h, 6, 8)) {
                 yarisPisti[b] = "-";
                 b += 1;
                 if (b > 18) {
                     b = 19;
                 }
-                yarisPisti[b] = "K";
+                yarisPisti[b] = "T";
             } else if (isBetween(h, 9, 10)) {
                 yarisPisti[b] = "-";
                 b -= 2;
                 if (b < 0) {
                     b = 0;
                 }
-                yarisPisti[b] = "K";
+                yarisPisti[b] = "T";
             }
-            for (String s : yarisPisti) {
-                System.out.print(s);
+
+            if(b==z){
+                yarisPisti[z]="OUCH";
             }
-            System.out.println(b);
-            // } while (b != 19);
+            if(b==19||z==19){
+                if(b==19)
+                {
+                    System.out.println("Tavsan kazandi, yuh!");
+                }
+                else
+                    System.out.println("Kaplumbaga kazandi oley");
+                break;
+            }
+                for (String s : yarisPisti) {
+                    System.out.print(s);
+                }
+                System.out.println();
+            } while (b != 19||z!=19);
             //} while (z != 19 ||b != 19);
         }
-    }
 }

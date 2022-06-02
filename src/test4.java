@@ -1,14 +1,14 @@
 import java.math.*;
-class Harketler{
+class Harketlrtrer{
 
 }
-class Kaplumbaga{
+class Kaplumbrtraga{
 
 }
-class Tavsan{
+class Tavsartn{
 
 }
-public class BirinciSoru {
+public class test4 {
     public static boolean isBetween(int x, int lower, int upper) {
         return lower <= x && x <= upper;
     }

@@ -1,20 +1,20 @@
-/*class Yiyecek {
+ abstract class Yiyecek {
     private String isim;
     private String renk;
     private String yetistigiYer;
-//Set();
+
     public Yiyecek(String i,String r, String y){
         this.isim=i;
         this.renk=r;
         this.yetistigiYer = y;
     }
-    public void setRenk(String renk){
+    public void set(String renk,String isim){
         this.renk = renk;
+        this.isim = isim;
     }
-    public void setYetistigiYer(String yetistigiYer){
+    public void set(String renk,String isim,String yetistigiYer){
         this.yetistigiYer = yetistigiYer;
-    }
-    public void setIsim(String isim){
+        this.renk = renk;
         this.isim = isim;
     }
     public String getIsim() {
@@ -27,32 +27,45 @@
         return yetistigiYer;
     }
     public String YiyecekTuru(){
-        return "bilirsiz";
+        return "belirsiz";
     }
 }
 class Meyve extends Yiyecek{
-    public Meyve(String i, String r,String y) {
-        super(i, r,y);
-    }*/
-   /* public void setRenk(String renk){
-         this.renk= renk;
+    public Meyve(String i, String r) {
+        super(i, r,"ağaç");
     }
-    public void setIsim(String isim){
-        this.x=isim;
+    @Override
+    public String YiyecekTuru() {
+        return getIsim()+" bir meyvedir";
     }
 }
+
 class Sebze extends Yiyecek{
-    public Sebze(String i, String r,String y) {
-        super(i,r,y);
+    public Sebze(String i, String r) {
+        super(i,r,"toprak");
     }
-    public void setRenk(String renk){
-        this.r=renk;
+    @Override
+    public String YiyecekTuru() {
+        return getIsim()+" bir sebzedir";
     }
-    public void setIsim(String isim){
-        x= isim;
+}
+
+public class MainIkinciSoru {
+
+    public static void bilgigoster(Yiyecek Y1){
+        if(Y1 instanceof Sebze){
+            System.out.println(Y1.getRenk()+Y1.YiyecekTuru()+"\nYetiştiği yer: "+Y1.getYetistigiYer()+"\n");
+        }
+        else if(Y1 instanceof Meyve){
+            System.out.println(Y1.getRenk()+Y1.YiyecekTuru()+"\nYetiştiği yer: "+Y1.getYetistigiYer()+"\n");
+        }
     }
-}*/
-/*public class MainIkinciSoru {
-       public static void main(String[] args) {
-       }
-   }*/
+
+    public static void main(String[] args) {
+        Yiyecek s=new Sebze(" lahana","kırmızı");
+        Yiyecek m=new Meyve(" elma","yeşil");
+
+        bilgigoster(s);
+        bilgigoster(m);
+    }
+}
